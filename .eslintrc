@@ -1,0 +1,80 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:css-modules/recommended",
+		"prettier"
+	],
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"plugins": [
+		"@typescript-eslint",
+		"react",
+		"simple-import-sort",
+		"css-modules",
+		"prettier",
+		"@remotion"
+	],
+	"rules": {
+		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"@typescript-eslint/no-unused-vars": [
+			"warn",
+			{"argsIgnorePattern": "^_", "ignoreRestSiblings": true}
+		],
+		"react-hooks/exhaustive-deps": "off",
+		"react/no-unescaped-entities": "warn",
+		"react/display-name": "off",
+		"react/prop-types": "off",
+		"@typescript-eslint/no-use-before-define": "off",
+		"@typescript-eslint/no-explicit-any": "off",
+		"@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/no-non-null-assertion": "off",
+		"prettier/prettier": "warn",
+		"sort-imports": "off",
+		"import/order": "off",
+		"simple-import-sort/exports": "warn",
+		"simple-import-sort/imports": [
+			"warn",
+			{
+				"groups": [
+					["^\\u0000"], // side effect (E.g.`import 'normalize.css'`)
+					["^react$"],
+					["^[^.]"], // Libs
+					["^../|^~/|^./"],
+					["\\.module.scss$"]
+				]
+			}
+		],
+		"prefer-const": "warn"
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"overrides": [
+		{
+			"env": {
+				"node": true
+			},
+			"rules": {
+				"@typescript-eslint/no-var-requires": "off"
+			}
+		}
+	]
+}
