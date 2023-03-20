@@ -1,7 +1,7 @@
 {
-	"name": "bestOfJSRemotion",
+	"name": "GPT-4-GPT-3-Remotion",
 	"version": "1.0.0",
-	"description": "My Remotion video",
+	"description": "Project Prompt to Video with GPT-4 and React.js - Automatic video generation",
 	"scripts": {
 		"start": "remotion preview src/index.tsx",
 		"build": "remotion render --concurrency=1 --disable-web-security src/index.tsx TutorialVideo out/video.mp4",
