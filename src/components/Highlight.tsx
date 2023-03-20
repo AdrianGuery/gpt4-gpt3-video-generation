@@ -4,11 +4,11 @@ import css from "./Highlight.module.scss";
 export const Highlight = ({
 	x,
 	y,
-	large,
+	width,
 }: {
 	x: number;
 	y: number;
-	large: number;
+	width: number;
 }) => {
 	return (
 		<div
@@ -16,7 +16,7 @@ export const Highlight = ({
 			style={{
 				left: `${x - 10}px`,
 				top: `${y - 10}px`,
-				width: `${large + 20}px`,
+				width: `${width + 20}px`,
 			}}
 		></div>
 	);
