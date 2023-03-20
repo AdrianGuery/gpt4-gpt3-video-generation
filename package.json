@@ -1,24 +1,29 @@
 {
-	"name": "bestOfJSRemotion",
+	"name": "GPT-4-GPT-3-Remotion",
 	"version": "1.0.0",
-	"description": "My Remotion video",
+	"description": "Project Prompt to Video with GPT-4 and React.js - Automatic video generation",
 	"scripts": {
 		"start": "remotion preview src/index.tsx",
-		"build": "remotion render --concurrency=1 --disable-web-security src/index.tsx TikTokVersion out/video.mp4",
+		"build": "remotion render --concurrency=1 --disable-web-security src/index.tsx TutorialVideo out/video.mp4",
 		"upgrade": "remotion upgrade",
 		"test": "eslint src --ext ts,tsx,js,jsx && tsc"
 	},
 	"repository": {},
 	"license": "UNLICENSED",
 	"dependencies": {
+		"@atlaskit/code": "^14.4.2",
+		"@babel/parser": "^7.20.5",
 		"@remotion/cli": "^3.0.0",
 		"@remotion/eslint-config": "^3.0.0",
 		"@tanstack/react-query": "^4.0.10",
 		"axios": "^0.27.2",
 		"eslint": "^8.14.0",
-		"prettier": "^2.2.1",
+		"prettier": "^2.8.1",
 		"react": "^18.0.0",
+		"react-code-prettify": "^0.0.1",
+		"react-code-snippet": "^0.6.13",
 		"react-dom": "^18.0.0",
+		"react-syntax-highlighter": "^15.5.0",
 		"remotion": "^3.0.0",
 		"sass": "^1.54.0",
 		"sass-loader": "^13.0.2",
@@ -26,6 +31,7 @@
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.6",
+		"@types/react-syntax-highlighter": "^15.5.5",
 		"@types/web": "^0.0.61"
 	}
 }
