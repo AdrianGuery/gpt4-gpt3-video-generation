@@ -10,10 +10,12 @@ import {
 	findFirstAndLastElements,
 	findHighlightTokens,
 } from "../utils/highlightUtils";
+import MacOsWindow from "../components/MacOsWindow";
 
 export const TutorialVideo: React.FC = () => {
 	const frame = useCurrentFrame();
 	const completeCode = exampleData.code;
+	const numberLine = completeCode.split("\n").length;
 
 	const [highlightProps, setHighlightProps] = useState<{
 		x: number;
@@ -62,19 +64,30 @@ export const TutorialVideo: React.FC = () => {
 	}, [currentHighlightIndex]);
 
 	return (
-		<AbsoluteFill style={{backgroundColor: "rgb(29, 31, 33)"}}>
+		<AbsoluteFill
+			style={{
+				background:
+					"linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
+			}}
+		>
 			<AbsoluteFill>
 				<Sequence from={0}>
-					<SyntaxHighlighter
-						customStyle={{width: "100%", height: "100%", fontSize: "20px"}}
-						language={exampleData.language}
-						style={atomDark}
-						showLineNumbers
-						wrapLines={true}
-						wrapLongLines
-					>
-						{displayedCode}
-					</SyntaxHighlighter>
+					<div style={{position: "absolute", margin: "5%", width: "90%"}}>
+						<MacOsWindow />
+						<SyntaxHighlighter
+							customStyle={{
+								width: "100%",
+								height: `${numberLine * 33}px`,
+								fontSize: "20px",
+							}}
+							language={exampleData.language}
+							style={atomDark}
+							wrapLines={true}
+							wrapLongLines
+						>
+							{displayedCode}
+						</SyntaxHighlighter>
+					</div>
 					{currentHighlightIndex >= 0 &&
 						currentHighlightIndex < exampleData.highlightExplanations.length &&
 						highlightProps && (
